@@ -1,0 +1,92 @@
+.navigation{
+    position: fixed; /* 固定在顶部 */
+    top: 0;
+    left: 10%;
+    width: 80%; /* 占满页面宽度 */
+    height: 80px; /* 导航栏高度 */
+    background-color: LightCyan; /* 背景颜色 */
+    color: DarkOrange; /* 字体颜色 */
+    display: flex;
+    justify-content: space-between; /* 左右布局 */
+    align-items: center; 
+    /* 垂直居中 */
+    
+    padding: 0 20px; /* 左右内边距 */
+    z-index: 1000; /* 确保导航栏在最上层 */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* 添加阴影 */
+    font-family: fantasy;
+    border-radius: 25px;
+    text-align: center; /* 文本居中 */
+  }
+  
+  .leftSide{
+      display: flex;
+      gap: 20px;
+  }
+  
+  .leftSide li{
+      display: flex;
+      list-style: none;
+      padding: 0 20px;
+      position: relative;
+  }
+  
+  .leftSide .logo {
+      /* text-decoration: none;
+      color: white;
+      font-size: 1.5rem;
+      font-weight: bold; */
+      width: 90px;
+      height: 90px;
+      position: relative;
+      
+    }
+  
+  .leftSide .menu-title{
+      color: DarkOrange;
+      font-family: monospace;
+  }
+  
+  .leftSide .menu-title:hover{
+      color: DeepPink;
+      font-family: monospace;
+  }
+  
+  .leftSide .meunItem {
+      border-radius: 25px;
+      color: DarkOrange;
+      font-family: monospace;
+  }
+  
+    .navItem {
+      display: flex;
+      gap: 20px; /* 链接之间的间距 */
+      /* align-items: center;
+      justify-content: space-between;
+      background: #808080;
+      padding: 20px, 80px;
+      max-width: 90%;
+      height: auto;
+      margin-left: auto;
+      margin-right: auto; */
+    }
+  
+    .navItem li {
+      display: flex;
+      list-style: none;
+      padding: 0 20px;
+      position: relative;
+  }
+    
+    .navItem li a {
+      text-decoration: none;
+      color: DarkOrange;
+      font-family: monospace;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+      text-align: center;
+    }
+    
+    .navItem li a:hover {
+      color: DeepPink; /* 鼠标悬停时的颜色 */
+    }

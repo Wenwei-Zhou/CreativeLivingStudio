@@ -1,0 +1,12 @@
+.category {
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    gap: 20px; /* 卡片之间的间距 */
+    flex-wrap: wrap; /* 屏幕小的时候自动换行 */
+    
+  }
+  
+.category > div {
+    flex-shrink: 0; /* 防止卡片缩小 */
+    width: 345px; /* 固定 Card 宽度 */
+}
