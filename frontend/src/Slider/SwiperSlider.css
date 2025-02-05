@@ -1,0 +1,45 @@
+.container {
+    /* width: 100%; /*背景宽度占满屏幕*/
+    /*background-color: LightCyan; 设定背景颜色 */
+    padding: 20px 0; /* 上下留点间距 */
+    display: flex;
+    justify-content: center; /* 让内容居中 */
+}
+
+/* 让 heading 和 slider 只占 80% 宽度 */
+.header-slider {
+    width: 80%;
+    max-width: 1200px;
+    display: flex;
+    align-items: center; /* 让 h1 和 slider 垂直居中 */
+    justify-content: space-between; /* 让 h1 和 slider 分开对齐 */
+    gap: 20px; /* 让 h1 和 slider 之间有间距 */
+}
+
+/* 让 h1 文字不会被压缩 */
+.heading {
+    font-family: monospace;
+    color: White;
+    text-shadow: 2px 2px 8px black;
+    white-space: nowrap; /* 防止换行 */
+}
+
+/* 让 Slider 占据剩余空间 */
+.slider-container {
+    flex-grow: 1;
+    max-width: 900px;
+}
+
+/* 让图片适应 Slider */
+.slick-slide > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider-container img {
+    width: 90%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}

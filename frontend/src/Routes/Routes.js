@@ -7,6 +7,7 @@ import { All } from "Store/All/All";
 import { Electronics } from "Store/Electronics/Electronics";
 import { HomeStore } from "Store/HomeStore/HomeStore";
 import { Outfit } from "Store/Outfit/Outfit";
+import { Pet } from "Store/Pet/Pet";
 
 
 export const routes =[
@@ -41,6 +42,10 @@ export const routes =[
     {
         path: "/Outfit",
         element: <Outfit/>,
+    },
+    {
+        path: "/Pet",
+        element: <Pet/>,
     },
     {
         path: "*",

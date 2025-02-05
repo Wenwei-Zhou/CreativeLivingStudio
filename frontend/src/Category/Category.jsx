@@ -9,6 +9,7 @@ import CardActions from '@mui/material/CardActions';
 import electronics from '../images/electronic.jpg'
 import homestore from '../images/homestore.jpg'
 import outfit from '../images/outfit.jpg'
+import pet from '../images/dog.jpg'
 import './Category.css'
 
 export const Category = () => {
@@ -23,7 +24,7 @@ export const Category = () => {
                     component="img"
                     height="150"
                     src={electronics}
-                    alt="electronics"
+                    alt="category"
                     />
                     <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
@@ -51,7 +52,7 @@ export const Category = () => {
                     component="img"
                     height="150"
                     src={homestore}
-                    alt="electronics"
+                    alt="category"
                     />
                     <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
@@ -79,7 +80,7 @@ export const Category = () => {
                     component="img"
                     height="150"
                     src={outfit}
-                    alt="electronics"
+                    alt="category"
                     />
                     <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
@@ -93,6 +94,34 @@ export const Category = () => {
                     size="large"
                     loadingPosition="center" 
                     href="/Outfit"
+                    sx={{color:'darkorange'}}>
+                    SHOP!
+                    </Button>
+                </CardActions>
+            </Card>
+            </div>
+
+            <div className="category-pet">
+            <Card sx={{ maxWidth: 345 }}>
+                <CardActionArea>
+                    <CardMedia
+                    component="img"
+                    height="150"
+                    src={pet}
+                    alt="category"
+                    />
+                    <CardContent>
+                    <Typography gutterBottom variant="h5" component="div">
+                        Pet
+                    </Typography>
+                    
+                    </CardContent>
+                </CardActionArea>
+                <CardActions>
+                    <Button 
+                    size="large"
+                    loadingPosition="center" 
+                    href="/Pet"
                     sx={{color:'darkorange'}}>
                     SHOP!
                     </Button>
