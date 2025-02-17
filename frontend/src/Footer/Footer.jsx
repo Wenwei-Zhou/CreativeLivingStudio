@@ -35,10 +35,12 @@ return(
             {/* <h3>Follow us</h3> */}
 
             <a href="https://www.facebook.com/share/19xvcL9xj2/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">
-            <CiFacebook color="DarkOrange" size="50px"/>
+            <CiFacebook color="tomato" size="50px"/>
             </a>
 
-            <RiTiktokLine color="DarkOrange" size="50px"/>
+            <a href="https://www.tiktok.com/@creativelivingstudio?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer">
+            <RiTiktokLine color="tomato" size="50px"/>
+            </a>
         </div>
 
         </div>

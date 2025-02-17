@@ -3,9 +3,9 @@
     top: 0;
     left: 10%;
     width: 80%; /* 占满页面宽度 */
-    height: 80px; /* 导航栏高度 */
+    height: 65px; /* 导航栏高度 */
     background-color: LightCyan; /* 背景颜色 */
-    color: DarkOrange; /* 字体颜色 */
+    color: tomato; /* 字体颜色 */
     display: flex;
     justify-content: space-between; /* 左右布局 */
     align-items: center; 
@@ -37,14 +37,15 @@
       font-size: 1.5rem;
       font-weight: bold; */
       width: 90px;
-      height: 90px;
+      height: 74px;
       position: relative;
       
     }
   
   .leftSide .menu-title{
-      color: DarkOrange;
+      color: tomato;
       font-family: monospace;
+      font-size: 1rem;
   }
   
   .leftSide .menu-title:hover{
@@ -54,7 +55,7 @@
   
   .leftSide .meunItem {
       border-radius: 25px;
-      color: DarkOrange;
+      color: tomato;
       font-family: monospace;
   }
   
@@ -80,7 +81,7 @@
     
     .navItem li a {
       text-decoration: none;
-      color: DarkOrange;
+      color: tomato;
       font-family: monospace;
       font-size: 1rem;
       transition: color 0.3s ease;

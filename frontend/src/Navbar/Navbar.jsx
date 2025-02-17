@@ -2,11 +2,11 @@ import React from "react";
 import { Link, useLocation } from "react-router";
 import "./Navbar.css"
 import logo from "images/WEWESHOP.png"
-import { TiThMenu } from "react-icons/ti";
-import Button from '@mui/material/Button';
+import { SlArrowDown } from "react-icons/sl";
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import { createTheme, ThemeProvider } from "@mui/material";
+import { createTheme, IconButton, ThemeProvider } from "@mui/material";
+
 
 export const Navbar = () => {
 
@@ -28,7 +28,7 @@ export const Navbar = () => {
               root: {
                 fontFamily: 'monospace', // 设置字体
                 fontSize: '16px',               // 字体大小
-                color: 'DarkOrange',               // 默认文字颜色
+                color: 'tomato',               // 默认文字颜色
                 '&:hover': {
                   color: 'DeepPink',            // Hover over the text color
                 },
@@ -37,7 +37,7 @@ export const Navbar = () => {
             // MuiMenu: {
             //     styleOverrides: {
             //         paper: {
-            //           backgroundColor: 'DarkOrange', // 背景颜色
+            //           backgroundColor: 'tomato', // 背景颜色
             //           border: '2px solid #3498db', // 边框样式
             //           borderRadius: '8px', // 圆角边框
             //           boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.2)', // 阴影效果
@@ -63,17 +63,18 @@ export const Navbar = () => {
         </Link>
        </li>
         
-        <Button
+        <IconButton
             id="basic-button"
             aria-controls={open ? 'basic-menu' : undefined}
             aria-haspopup="true"
             aria-expanded={open ? 'true' : undefined}
             onClick={handleClick}
+            style={{padding:'1px', width:'auto', height:'auto'}}
             >
                 <div className="menu-title">
-                <TiThMenu />Shop
+                <SlArrowDown />Shop
                 </div>
-            </Button>
+            </IconButton>
 
             <ThemeProvider theme={theme}>
             <Menu
@@ -92,26 +93,26 @@ export const Navbar = () => {
                 }}
             >
 
-                {['All', 'Electronics', 'HomeStore', 'Outfit'].map((category) => (
+                {/* {['Electronics', 'HomeStore', 'Outfit', 'Pet'].map((category) => (
                     <MenuItem key={category} onClick={handleClose}>
                         <Link to={`/${category}`} style={{textDecoration: 'none', color:'inherit', width: '100%'}}>
                             {category} 
                         </Link>
                     </MenuItem>
-                ))}
+                ))} */}
 
-                {/* <MenuItem onClick={handleClose}>
-                    <Link to="/All" style={{textDecoration: 'none', color: 'inherit' }}>All</Link>
+                <MenuItem onClick={handleClose}>
+                    <Link to="/Electronics" style={{textDecoration: 'none', color: 'inherit', width: '100%' }}>Electronics</Link>
                 </MenuItem>
                 <MenuItem onClick={handleClose}>
-                    <Link to="/Electronics" style={{textDecoration: 'none', color: 'inherit' }}>Electronics</Link>
+                    <Link to="/HomeStore" style={{textDecoration: 'none', color: 'inherit', width: '100%' }}>Home&Living</Link>
                 </MenuItem>
                 <MenuItem onClick={handleClose}>
-                    <Link to="/HomeStore" style={{textDecoration: 'none', color: 'inherit' }}>HomeStore</Link>
+                    <Link to="/Outfit" style={{textDecoration: 'none', color: 'inherit', width: '100%' }}>Outfit</Link>
                 </MenuItem>
                 <MenuItem onClick={handleClose}>
-                    <Link to="/Outfit" style={{textDecoration: 'none', color: 'inherit' }}>Outfit</Link>
-                </MenuItem> */}
+                    <Link to="/Pet" style={{textDecoration: 'none', color: 'inherit', width: '100%' }}>Pet</Link>
+                </MenuItem>
                 
             </Menu>
             </ThemeProvider>

@@ -23,7 +23,7 @@ export const Home = () => {
                 className="home-imageSlider"
                 initial={{ x: 100, opacity: 0 }} 
                 animate={{ x: 0, opacity: 1 }} 
-                transition={{ duration: 1 }}
+                transition={{ duration: 0.8 }}
             >
             <ImageSlider/>
             </motion.div>
@@ -34,7 +34,7 @@ export const Home = () => {
                 className="home-category"
                 initial={{ x: 100, opacity: 0 }} 
                 animate={{ x: 0, opacity: 1 }} 
-                transition={{ duration: 1, delay: 0.5 }}
+                transition={{ duration: 0.8, delay: 0.5 }}
             >
             <Category/>
             </motion.div>

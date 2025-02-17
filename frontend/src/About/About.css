@@ -1,0 +1,16 @@
+.about .introduction{
+    margin-top: 200px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 60%;
+}
+/* 
+.about .about-image{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 60%;
+} */

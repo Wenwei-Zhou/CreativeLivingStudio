@@ -38,7 +38,7 @@ export const Category = () => {
                     size="large"
                     loadingPosition="center" 
                     href="/Electronics"
-                    sx={{color:'darkorange'}}>
+                    sx={{color:'tomato'}}>
                     SHOP!
                     </Button>
                 </CardActions>
@@ -56,7 +56,7 @@ export const Category = () => {
                     />
                     <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
-                        Home
+                        Home&Living
                     </Typography>
                     
                     </CardContent>
@@ -66,7 +66,7 @@ export const Category = () => {
                     size="large"
                     loadingPosition="center" 
                     href="/HomeStore"
-                    sx={{color:'darkorange'}}>
+                    sx={{color:'tomato'}}>
                     SHOP!
                     </Button>
                 </CardActions>
@@ -94,7 +94,7 @@ export const Category = () => {
                     size="large"
                     loadingPosition="center" 
                     href="/Outfit"
-                    sx={{color:'darkorange'}}>
+                    sx={{color:'tomato'}}>
                     SHOP!
                     </Button>
                 </CardActions>
@@ -122,7 +122,7 @@ export const Category = () => {
                     size="large"
                     loadingPosition="center" 
                     href="/Pet"
-                    sx={{color:'darkorange'}}>
+                    sx={{color:'tomato'}}>
                     SHOP!
                     </Button>
                 </CardActions>

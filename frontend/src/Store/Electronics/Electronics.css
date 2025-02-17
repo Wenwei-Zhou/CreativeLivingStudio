@@ -1,0 +1,25 @@
+.electronics {
+    /* height: 100vh; */
+    /* width: 100%; */
+    /* display: flex; */
+    background-color: FloralWhite;
+    flex-direction: column; /*让子元素垂直排列*/
+    align-items: center; /* 居中对齐 */
+}
+
+.electronics-card {
+    margin-top: 100px;
+    width: 80%;
+    display: flex;
+    justify-content: space-between; /*水平居中*/
+    gap: 50px; /* 卡片之间的间距 */
+    flex-wrap: wrap; /* 屏幕小的时候自动换行 */
+    position: relative;
+    text-align: center;
+    margin-left: auto; /* 居中 */
+    margin-right: auto; /* 居中 */
+}
+
+.electronics .home-footer {
+    margin-top: 100px;
+}

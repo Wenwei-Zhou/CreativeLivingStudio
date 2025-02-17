@@ -34,7 +34,7 @@ export const ImageSlider = () => {
   useEffect(() => {
     let timer = setInterval(() => {
       setIndex(index + 1);
-    }, 3000);
+    }, 2500);
     return () => clearInterval(timer);
     }, [index]);
 
@@ -44,7 +44,7 @@ export const ImageSlider = () => {
     }
 
     function handleNext(){
-        setIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1))
+        setIndex((nextIndex) => (nextIndex === images.length - 1 ? 0 : nextIndex + 1))
         //if the current slide is at the last slide which is images.length - 1, then set the CurrentSlide equal to 0 which is the first slide. otherwide is currentSlide + 1 which is the next slide
     }
 
