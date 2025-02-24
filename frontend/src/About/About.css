@@ -1,11 +1,23 @@
 .about .introduction{
     margin-top: 200px;
+    margin-bottom: 200px;
     position: relative;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
 }
+
+.about .introduction .introduction-text{
+    width: 600px;
+    position: relative;
+    margin-top: auto;
+    margin-bottom: auto;
+    text-align: center;
+}
+
 /* 
 .about .about-image{
     position: relative;
@@ -13,4 +25,5 @@
     margin-right: auto;
     text-align: center;
     width: 60%;
+---------This is design for text and image vertically-------
 } */

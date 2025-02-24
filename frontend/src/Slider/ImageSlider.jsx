@@ -50,17 +50,17 @@ export const ImageSlider = () => {
 
   return(
     <div className="slider">
-        <BsArrowLeftCircleFill
-        className="arrow arrow-left"
-        onClick={handlePrevious}
-        />
-
+        
       <img src={images[index]} alt={`Slide ${index}`} style={imagesSize[index]} className="slide-image"/>
       
       {/* {images.map((_, index) => {
           
       })} */}
       
+      <BsArrowLeftCircleFill
+        className="arrow arrow-left"
+        onClick={handlePrevious}
+        />
       <BsArrowRightCircleFill
         className="arrow arrow-right"
         onClick={handleNext}

@@ -47,9 +47,9 @@ export const HomeStore = () => {
 
             const querySnapshot = await getDocs(collection(db, "homestore"));
 
-            querySnapshot.forEach((element) => {
-                console.log(element.id, "=>", element.data())
-            });
+            // querySnapshot.forEach((element) => {
+            //     console.log(element.id, "=>", element.data())
+            // });
 
             
             const products = querySnapshot.docs.map(doc => ({

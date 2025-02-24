@@ -1,7 +1,7 @@
 // // Import the functions you need from the SDKs you need
 // import { initializeApp } from "firebase/app";
 // import { getAnalytics } from "firebase/analytics";
-// import { getFirestore, doc, getDocFromCache } from "firebase/firestore";
+// import { getFirestore, getAuth, doc, getDocFromCache } from "firebase/firestore";
 // import { useParams } from "react-router";
 // import { useEffect, useState } from "react";
 // // TODO: Add SDKs for Firebase products that you want to use
@@ -25,11 +25,12 @@
 
 // // Initialize Cloud Firestore and get a reference to the service
 // const db = getFirestore(app);
+// const auth = getAuth(app);
 
 // //const { id } = useParams();
 // //const [product, setProduct] = useState(null);
 
-// // export {app, analytics, db};
+// export {app, analytics, db, auth};
 
 // export const fetchElectronics = async () => {
 

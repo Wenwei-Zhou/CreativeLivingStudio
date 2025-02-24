@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, useLocation } from "react-router";
 import "./Navbar.css"
 import logo from "images/WEWESHOP.png"
@@ -6,9 +6,17 @@ import { SlArrowDown } from "react-icons/sl";
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { createTheme, IconButton, ThemeProvider } from "@mui/material";
-
+import PersonIcon from '@mui/icons-material/Person';
+import {useAuthContext} from "useContext/useAuthContext"
 
 export const Navbar = () => {
+
+    const {userID, user} = useAuthContext();
+
+    useEffect(() => {
+        console.log("user id: ", userID)
+    }, [userID]);
+    // check wether login success or not, check it by user in useAuthContext component
 
     const currentURL = useLocation();
 
@@ -119,7 +127,18 @@ export const Navbar = () => {
     </ul>
             
             <ul className="navItem">
-                <li><Link to="/Login" style={{color: currentURL.pathname === '/Login' ? 'DeepPink' : ''}}>Sign in</Link></li>
+                {
+                    user === null ? 
+                    <li>
+                    <Link to="/Login" style={{color: currentURL.pathname === '/Login' ? 'DeepPink' : '', display: 'flex', alignItems: 'center'}}><PersonIcon />Sign in</Link>
+                    </li>
+                    :
+                    <li>
+                    <Link to="/Profile" style={{color: currentURL.pathname === '/Profile' ? 'DeepPink' : '', display: 'flex', alignItems: 'center'}}><PersonIcon />Profile</Link>
+                    </li>
+                }
+                
+
                 <li><Link to="/About" style={{color: currentURL.pathname === '/About' ? 'DeepPink' : ''}}>About us</Link></li>
                 <li><Link to="/Contact" style={{color: currentURL.pathname === '/Contact' ? 'DeepPink' : ''}}>Contact</Link></li>
             </ul>

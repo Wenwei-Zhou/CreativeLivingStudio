@@ -96,11 +96,13 @@
 }
 
 .arrow-left {
-  left: 20px; /* 左箭头位置 */
+  left: 20px; 
+  /* 左箭头位置 */
 }
 
 .arrow-right {
-  right: 20px; /* 右箭头位置 */
+  right: 20px; 
+  /* 右箭头位置 */
 }
 
 .arrow:hover {

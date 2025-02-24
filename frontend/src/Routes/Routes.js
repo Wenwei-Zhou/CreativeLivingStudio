@@ -3,6 +3,7 @@ import {Home} from "Home/Home"
 import {About} from "About/About"
 import { Login } from "authentication/Login";
 import { Signup } from "authentication/Signup";
+import { Profile } from "Profile/Profile";
 import { Contact } from "Contact/Contact";
 import { All } from "Store/All/All";
 import { Electronics } from "Store/Electronics/Electronics";
@@ -28,6 +29,10 @@ export const routes =[
     {
         path: "/Signup",
         element: <Signup/>,
+    },
+    {
+        path: "/Profile",
+        element: <Profile/>,
     },
     {
         path: "/Contact",

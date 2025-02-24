@@ -15,6 +15,9 @@ import ArrowCircleLeftOutlinedIcon from '@mui/icons-material/ArrowCircleLeftOutl
 import ArrowCircleRightOutlinedIcon from '@mui/icons-material/ArrowCircleRightOutlined';
 // import { Card, CardMedia, CardContent, Typography } from "@mui/material";
 // import { motion } from "framer-motion";
+import Alert from '@mui/material/Alert';
+import Stack from '@mui/material/Stack';
+import {useProfileContext} from "useContext/useProfileContext"
 
 
 export const ProductDetail = () => {
@@ -68,6 +71,19 @@ export const ProductDetail = () => {
     }, [db, firebaseCollection, firebaseDocument]);
     
     console.log(detail);
+
+/////////////////////////////////////////////////////////////////////
+
+const {addCart} = useProfileContext();
+
+const [alert, setAlert] = useState('');
+
+const handleAddCart = (product, image, name, price) => {
+    addCart(product, image, name, price)
+
+    setAlert('Add to cart successful, check in profile')
+    setTimeout(() => setAlert(''), 2000)
+}
 
 /////////////////////////////////////////////////////////////////////
 
@@ -130,7 +146,6 @@ export const ProductDetail = () => {
                             style={{
                                 opacity: index === sliderIndex ? 1 : 0.5,
                             }}
-
                         >
                         </img>
                     ))}
@@ -142,11 +157,22 @@ export const ProductDetail = () => {
                 
                 <div className="detail-text">
                 <Grid>
-                <h1 style={{color:"black", fontSize:'25px', fontFamily:'monospace'}}>{detail.name}</h1>
-                
-                <h1 style={{color:"black", fontSize:'25px'}}>AU$ {detail.price}</h1>
+                    <h1 style={{color:"black", fontSize:'25px', fontFamily:'monospace'}}>{detail.name}</h1>
                     
-                <Button variant="contained" sx={{backgroundColor:"darkorange",":hover":{backgroundColor:'orange', boxShadow: '10px 5px 5px orange'}, paddingLeft:'200px', paddingRight:'200px'}}>Buy Now</Button>
+                    <h1 style={{color:"black", fontSize:'25px'}}>AU ${detail.price}</h1>
+                        
+                    <Button 
+                    variant="contained" 
+                    sx={{backgroundColor:"darkorange",":hover":{backgroundColor:'orange', boxShadow: '5px 3px 3px orange'}}}
+                    onClick={() => handleAddCart(detail.name, detail.image, detail.name, detail.price)}
+                    >
+                        + Add to cart
+                    </Button>
+
+                    <Stack sx={{width: '100%'}} spacing={2}>
+                    {alert && <Alert severity="success">{alert}</Alert>}
+                    </Stack>
+
                 </Grid>
                     
                 <br></br>
@@ -158,9 +184,9 @@ export const ProductDetail = () => {
                     {detail.description}
                 </p>
                 
-
+                <h3>Size:</h3>
                 <Grid container spacing={3} sx={{alignItems:'center'}}>
-                    <h3>Size:</h3>    
+                       
                     <Grid>
                         <p>Width: {detail.width}</p>
                     </Grid>
@@ -172,7 +198,19 @@ export const ProductDetail = () => {
                     </Grid>
                 </Grid>
 
-                
+                <h3>Size:</h3> 
+                <Grid container spacing={1} rowGap={1} sx={{alignItems:'center'}}>
+
+                    <Grid>
+                        <p>Small: {detail.small}</p>
+                    </Grid>
+                    <Grid>
+                        <p>Median: {detail.median}</p>
+                    </Grid>
+                    <Grid>
+                        <p>Large: {detail.large}</p>
+                    </Grid>
+                </Grid>
                 </Paper>
 
                 </div>

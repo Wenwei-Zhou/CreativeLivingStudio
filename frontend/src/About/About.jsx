@@ -17,6 +17,7 @@ import studio9 from "../images/studio9.jpg"
 import studio10 from "../images/studio10.jpg"
 import studio11 from "../images/studio11.jpg"
 import studio12 from "../images/studio12.jpg"
+import { Paper } from "@mui/material";
 
 export const About = () => {
 
@@ -96,34 +97,42 @@ export const About = () => {
             </div>
 
             <div className="introduction">
-                <img src={weweshop} alt="weweshop" width={300}></img>
 
-            <p  style={{fontSize: 20}}>
-                WEWE SHOP is a creative department store that collaborates with manufacturers worldwide to bring you the best and most unique products from around the globe. 
-                From design to production, every item reflects innovation and originality, whether crafted through advanced manufacturing technology or expert handcrafting techniques. 
-                With a commitment to quality and creativity, WEWE SHOP ensures that each product meets the highest standards, blending cutting-edge machinery with perfect craftsmanship. 
-                Our mission is to provide customers with exceptional and inspiring products, making everyday life more exciting and stylish.
-            </p>
+                <div className="about-image">
+                
+                <ImageList
+                sx={{ height: 760, width: 600 }}
+                variant="quilted"
+                cols={4}
+                rowHeight={121}
+                >
+                    {itemData.map((item) => (
+
+                    <ImageListItem key={item.img} cols={item.cols || 1} rows={item.rows || 1}>
+                        <img
+                            {...srcset(item.img, 121, item.rows, item.cols)}
+                            alt={item.title}
+                            loading="lazy"
+                            // style={{":hover": {boxShadow: '10px 5px 5px'}}}
+                        />
+                    </ImageListItem>
+                    ))}
+                </ImageList>
             
+                </div>
 
-            <div className="about-image">
-            <ImageList
-            sx={{ height: 760 }}
-            variant="quilted"
-            cols={4}
-            rowHeight={121}
-            >
-                {itemData.map((item) => (
-                <ImageListItem key={item.img} cols={item.cols || 1} rows={item.rows || 1}>
-                    <img
-                        {...srcset(item.img, 121, item.rows, item.cols)}
-                        alt={item.title}
-                        loading="lazy"
-                    />
-                </ImageListItem>
-                ))}
-            </ImageList>
-        </div>
+                <div className="introduction-text">
+                <Paper elevation={3} sx={{backgroundColor:'Bisque', padding: 2}}>
+                    <img src={weweshop} alt="weweshop" width={300}></img>
+
+                    <p  style={{fontSize: 20, textAlign: "justify"}}>
+                        WEWE SHOP is a creative store that collaborates with manufacturers worldwide to bring you the best and most unique products from around the globe. 
+                        From design to production, every item reflects innovation and originality, whether crafted through advanced manufacturing technology or expert handcrafting techniques. 
+                        With a commitment to quality and creativity, WEWE SHOP ensures that each product meets the highest standards, blending cutting-edge machinery with perfect craftsmanship. 
+                        Our mission is to provide customers with exceptional and inspiring products, making everyday life more exciting and stylish.
+                    </p>
+                    </Paper>
+                </div>
 
         </div>
 
