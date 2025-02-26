@@ -18,7 +18,6 @@ import studio10 from "../images/studio10.jpg"
 import studio11 from "../images/studio11.jpg"
 import studio12 from "../images/studio12.jpg"
 import { Paper } from "@mui/material";
-import { motion } from "framer-motion";
 
 
 export const About = () => {

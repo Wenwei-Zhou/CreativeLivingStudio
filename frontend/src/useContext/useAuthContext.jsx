@@ -143,7 +143,7 @@ const AuthProvider = ({children}) => {
                 });
 
                 return () => unsubscribe()
-        }, [auth]);
+        }, []);
         return userEmail;
     }
     

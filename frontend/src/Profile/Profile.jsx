@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import './Profile.css'
 import { Navbar } from "Navbar/Navbar";
 import {useAuthContext} from "useContext/useAuthContext";
@@ -13,22 +13,22 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import { Order } from 'Profile/Order';
 import { Information } from "./Information";
 
-const firebaseConfig = {
-    apiKey: "AIzaSyCpdyNFZTAcGZjCVxTqxDiiLx3XW2E8OD0",
-    authDomain: "creativelivingstudio-4dde4.firebaseapp.com",
-    projectId: "creativelivingstudio-4dde4",
-    storageBucket: "creativelivingstudio-4dde4.firebasestorage.app",
-    messagingSenderId: "982129293782",
-    appId: "1:982129293782:web:5f80082d2e5f9993668c77",
-    measurementId: "G-GKTH553LG9"
-  };
+// const firebaseConfig = {
+//     apiKey: "AIzaSyCpdyNFZTAcGZjCVxTqxDiiLx3XW2E8OD0",
+//     authDomain: "creativelivingstudio-4dde4.firebaseapp.com",
+//     projectId: "creativelivingstudio-4dde4",
+//     storageBucket: "creativelivingstudio-4dde4.firebasestorage.app",
+//     messagingSenderId: "982129293782",
+//     appId: "1:982129293782:web:5f80082d2e5f9993668c77",
+//     measurementId: "G-GKTH553LG9"
+//   };
   
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  //const analytics = getAnalytics(app)
   
-  // Initialize Cloud Firestore and get a reference to the service
-  const db = getFirestore(app);
+//   const app = initializeApp(firebaseConfig);
+  
+  
+  
+//   const db = getFirestore(app);
 
 export const Profile = () => {
 
