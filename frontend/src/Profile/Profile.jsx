@@ -5,8 +5,8 @@ import {useAuthContext} from "useContext/useAuthContext";
 import {useProfileContext} from "useContext/useProfileContext"
 import { Link } from "react-router";
 // import { doc, getDoc } from "firebase/firestore";
-import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
+// import { initializeApp } from "firebase/app";
+// import { getFirestore } from "firebase/firestore";
 import Grid from '@mui/material/Grid2';
 import { Button, Box } from '@mui/material';
 import LogoutIcon from '@mui/icons-material/Logout';
