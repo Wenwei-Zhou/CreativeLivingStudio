@@ -28,6 +28,7 @@ const ProfileContext = createContext(
         userData: null,
         firstName: null,
         lastName: null,
+        totalPrice: null,
         cart: [],
         addCart: () => Promise.resolve(),
     }
@@ -44,6 +45,8 @@ const ProfileProvider = ({children}) => {
     const email = Authenticated();
 
     const [cart, setCart] = useState([]);
+
+    const [totalPrice, setTotalPrice] = useState(0);
     
 
     useEffect( () => {
@@ -157,6 +160,13 @@ const ProfileProvider = ({children}) => {
         await setDoc(doc(db, "authentication", email, "cart", product), data)
     }
 
+    
+
+    useEffect(() => {
+        const total = cart.reduce((acc, element) => acc + element.price, 0);
+        setTotalPrice(total);
+    }, [cart])
+
 
     return(
         <ProfileContext.Provider
@@ -165,6 +175,7 @@ const ProfileProvider = ({children}) => {
             firstName,
             lastName,
             cart,
+            totalPrice,
             addCart,
         }}
         >

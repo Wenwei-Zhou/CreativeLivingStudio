@@ -18,6 +18,8 @@ import studio10 from "../images/studio10.jpg"
 import studio11 from "../images/studio11.jpg"
 import studio12 from "../images/studio12.jpg"
 import { Paper } from "@mui/material";
+import { motion } from "framer-motion";
+
 
 export const About = () => {
 
@@ -121,6 +123,7 @@ export const About = () => {
             
                 </div>
 
+               
                 <div className="introduction-text">
                 <Paper elevation={3} sx={{backgroundColor:'Bisque', padding: 2}}>
                     <img src={weweshop} alt="weweshop" width={300}></img>
@@ -133,7 +136,6 @@ export const About = () => {
                     </p>
                     </Paper>
                 </div>
-
         </div>
 
         <div className="home-footer">

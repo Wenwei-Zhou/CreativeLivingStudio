@@ -42,9 +42,9 @@ const createCart = async (email) => {
             const cartColletion = collection(docRef, "cart");
 
             await setDoc(doc(cartColletion), {
-                image: '',
-                name: '',
-                price: 0,
+                image: 'https://firebasestorage.googleapis.com/v0/b/creativelivingstudio-4dde4.firebasestorage.app/o/WechatIMG64.jpg?alt=media&token=f40fdd03-5528-45c5-b6db-b5ba1beeadae',
+                name: 'Welcome',
+                price: 0.00,
             });
 
             console.log("create cart database successful");

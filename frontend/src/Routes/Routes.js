@@ -5,7 +5,6 @@ import { Login } from "authentication/Login";
 import { Signup } from "authentication/Signup";
 import { Profile } from "Profile/Profile";
 import { Contact } from "Contact/Contact";
-import { All } from "Store/All/All";
 import { Electronics } from "Store/Electronics/Electronics";
 import { HomeStore } from "Store/HomeStore/HomeStore";
 import { Outfit } from "Store/Outfit/Outfit";
@@ -37,10 +36,6 @@ export const routes =[
     {
         path: "/Contact",
         element: <Contact/>,
-    },
-    {
-        path: "/All",
-        element: <All/>,
     },
     {
         path: "/Electronics",

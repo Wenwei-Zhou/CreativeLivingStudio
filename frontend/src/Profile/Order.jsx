@@ -1,5 +1,5 @@
-import React from "react";
-import { IconButton, ImageListItem, Button } from "@mui/material";
+import React, { useEffect, useState } from "react";
+import { IconButton, ImageListItem, Divider, Button } from "@mui/material";
 import { Grid } from "@mui/joy";
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 import List from '@mui/material/List';
@@ -10,6 +10,7 @@ import {useAuthContext} from "useContext/useAuthContext";
 import { deleteDoc, doc } from "firebase/firestore";
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
+import {handleCheckout} from "Stripe/Stripe"
 
 const firebaseConfig = {
     apiKey: "AIzaSyCpdyNFZTAcGZjCVxTqxDiiLx3XW2E8OD0",
@@ -33,12 +34,19 @@ export const Order = () => {
     const {Authenticated} = useAuthContext();
     const email = Authenticated();
 
-    const {cart} = useProfileContext();
+    const {cart, totalPrice} = useProfileContext();
     cart.map(element => (
+        console.log(element.id),
         console.log(element.name),
-        console.log(element.price),
-        console.log(element.id)
+        console.log(element.price)
     ))
+
+    // const [total, setTotal] = useState(0);
+
+    // useEffect(() => {
+    //     const totalPrice = cart.reduce((acc, element) => acc + element.price, 0);
+    //     setTotal(totalPrice);
+    // }, [cart])
 
 
     const deleteOrder = async(id) => {
@@ -77,17 +85,11 @@ export const Order = () => {
                 <h1 style={{color: '#E38F1F'}}>Your orders</h1>
             </Grid>
             <hr></hr>
-            {/* <Grid>
-                <Paper elevation={2} sx={{width: '80%',backgroundColor: 'white', display: 'flex', justifyContent: 'space-between'}}>
-                    <div>uhuhu;h</div>
-                    <div>ue;owhe;ochweio</div>
-                </Paper>
-            </Grid> */}
             <Grid>
             
-                <List sx={listStyle} aria-label="mailbox folders">
                 {cart.map(element => (
                     element.id ? (
+                        <List sx={listStyle} aria-label="mailbox folders">
                         <ListItem
                         key={element.id}
                         secondaryAction={
@@ -107,19 +109,28 @@ export const Order = () => {
                         <img src={element.image} alt="cart item"></img>
                         </ImageListItem>
     
-                        <ListItemText primary={`${element.name}`} secondary={`AU $ ${element.price}`}/>
+                        <ListItemText primary={`${element.name}`} secondary={`AU $${element.price}`}/>
 
+                        <Divider component="li" />
                     </ListItem>
+
+                    
+                    </List>
                     ) : null
-                    // <Divider component="li" />
                 ))}
                 
+                <List>
+                    <ListItem>
+                        <ListItemText primary="Total:"/>
+                        <ListItemText primary={`AU $${totalPrice}`}/>
+                    </ListItem>
+
+                    <Divider component="li" /> 
                 </List>
-            
             </Grid>
 
             <Grid>
-                <Button variant="contained" sx={{width: '50%'}}>CHECK OUT</Button>
+                <Button variant="contained" sx={{width: '50%', backgroundColor: 'tomato'}} onClick={() => handleCheckout(totalPrice * 100)}>CHECK OUT</Button>
             </Grid>
         </Grid>
 

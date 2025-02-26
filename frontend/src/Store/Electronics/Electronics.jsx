@@ -21,6 +21,7 @@ import { initializeApp } from "firebase/app";
 // import { getAnalytics } from "firebase/analytics";
 import { getFirestore } from "firebase/firestore";
 import { motion } from "framer-motion";
+// import TextField from '@mui/material/TextField';
 
 
 export const Electronics = () => {
@@ -42,7 +43,11 @@ export const Electronics = () => {
       // Initialize Cloud Firestore and get a reference to the service
       const db = getFirestore(app);
 
+    //   const [search, setSearch] = useState("");                               SEARCH FEATURE
+    //   const [filteredItems, setFilteredItems] = useState([productlist]);      SEARCH FEATURE
+
       const [productlist, setProductlist] = useState([]);
+
 
       const collectionName = "electronics"; //the first parameter of the URL
 
@@ -82,6 +87,21 @@ export const Electronics = () => {
         fetchProduct();
     }, [db]);
 
+
+    // !!!!!SEARCH FEATURE
+    // useEffect(() => {
+    //     if(search === ""){
+    //         return setFilteredItems(productlist);
+    //     }
+
+    //     const filtered = productlist.filter(element =>
+    //             element.name.toLowerCase().includes((search).toLowerCase())
+    //         );
+    //         setFilteredItems(filtered);
+        
+		
+	// }, [search]);
+
     console.log(productlist)
 
     return(
@@ -93,6 +113,16 @@ export const Electronics = () => {
             <div className="top-image">
                 <img src={electronicsBackground} alt="electronicsBackground" width="100%" height="580"/>
             </div>
+
+            {/* <div className="search">      !!!!!SEARCH FEATURE
+            <TextField 
+                id="outlined-search" label="Search"
+                placeholder="Search"
+                type='text'
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+            />
+            </div> */}
 
             <motion.div
                 initial={{ opacity: 0, scale: 0 }}
